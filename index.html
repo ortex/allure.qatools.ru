@@ -1,0 +1,20 @@
+---
+layout: default
+title: Allure self-documented tests
+---
+
+<div id="home">
+    <h1>Support technologies</h1>
+    {% directory path:'langs' %}
+    <div class="posts">
+        {% assign folder = 'langs/'|append:file.name %}
+        <b>{{file.name}}</b>
+        {% directory path:folder %}
+            <div>
+                {{ file.slug }}
+            </div>
+        {% enddirectory %}
+    </div>
+
+    {% enddirectory %}
+</div>
