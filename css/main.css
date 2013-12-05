@@ -18,7 +18,7 @@ a:hover {
     color: #000;
 }
 
-.header {
+.header, .content {
     clear: both;
 }
 
@@ -70,6 +70,7 @@ a:hover {
     background: #fff;
     list-style: none;
     box-shadow: 1px 1px 4px #888;
+    z-index: 1;
 }
 
 .menu__menu:hover>.dropdown {
@@ -107,7 +108,7 @@ a:hover {
     text-align: justify;
 }
 
-.footer .strut {
+.strut {
     display: inline-block;
     position: relative;
     width: 100%;
@@ -120,6 +121,14 @@ a:hover {
 
 .footer .contact a {
     color: #8085C1;
+}
+
+.slides img {
+    width: 100%;
+}
+
+.informers {
+    margin-top: 10em;
 }
 
 .page pre {
