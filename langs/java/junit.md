@@ -1,3 +1,7 @@
+---
+layout: page
+title: Allure JUnit integration
+---
 [allure-junit-pom-example]: https://github.com/allure-framework/allure/blob/master/docs/allure-junit-pom-example.md
 [steps-and-attachments]: https://github.com/allure-framework/allure/blob/master/docs/steps-and-attachments.md
 

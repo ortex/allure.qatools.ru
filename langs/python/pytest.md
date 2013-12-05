@@ -1,3 +1,8 @@
+---
+layout: page
+title: Allure PyTest integration
+---
+
 ## Allure-Pytest-Adaptor
 
 Плагин для `py.test` который может генерировать отчеты в удобочитаемом виде для `allure-report`

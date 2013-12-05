@@ -1,10 +1,16 @@
+---
+layout: page
+title: Allure Karma integration
+---
+
 # karma-allure-reporter
 
-> Reporter for the Allure XML format. It allows to make detailed report
+Reporter for the Allure XML format. It allows to make detailed report
 
 ## Installation
 
 Install karma-allure-reporter into your project as devDependency
+
 ```json
 {
   "devDependencies": {
@@ -15,6 +21,7 @@ Install karma-allure-reporter into your project as devDependency
 ```
 
 You can simple do it by:
+
 ```bash
 npm install karma-allure-reporter --save-dev
 ```
