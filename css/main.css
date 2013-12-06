@@ -1,12 +1,6 @@
 body {
     background-color: #FFF;
     font: 14px normal 'Open Sans', sans-serif;
-}
-
-.site {
-    text-align: justify;
-    width: 920px;
-    margin: 0 auto 2em;
     line-height: 1.5em;
 }
 
@@ -18,8 +12,12 @@ a:hover {
     color: #000;
 }
 
+.content {
+    text-align: justify;
+}
+
 .header, .content {
-    clear: both;
+    /*clear: both;*/
 }
 
 .header a {
@@ -33,7 +31,7 @@ a:hover {
 
 .title {
     font-family: 'Oleo Script', cursive;
-    line-height: 2em;
+    line-height: 1.5em;
 }
 
 .menu {
@@ -123,8 +121,54 @@ a:hover {
     color: #8085C1;
 }
 
-.slides img {
+.presentation {
+    padding: 30px 0;
+    box-shadow: inset 0 5px 10px -5px #999;
+    background: #EEEEEE;
+    background: linear-gradient(#eeebeb, #eee, #eeebeb);
+}
+
+.slides .fotorama__html {
+    position: relative;
+}
+
+.slides .slide {
+    border: 1px solid #ddd;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 7px;
+    background: #fff;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.slide__image {
+    border: 1px solid #ddd;
     width: 100%;
+}
+
+.slide__description {
+    position: absolute;
+    bottom: 9px;
+    left: 10px;
+    padding: 1.5em;
+    max-width: 360px;
+    background: rgba(238, 235, 235, 0.5);
+}
+
+.slide__description_right {
+    right: 5px;
+    left: auto;
+}
+
+.slide__title {
+    margin-top: 0;
+    color: #a00;
+    font-weight: normal;
+    font-family: 'Oleo Script', cursive;
 }
 
 .informers {
