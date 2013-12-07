@@ -34,7 +34,7 @@ a:hover {
     line-height: 1.5em;
 }
 
-.menu {
+.menu, .qatools {
     margin: 1.9em 0;
 }
 
@@ -95,6 +95,14 @@ a:hover {
 
 .python {
     border-color: #3581ba;
+}
+
+.qatools {
+    background-image: url(../img/qatools.png);
+    display: block;
+    border-radius: 5px;
+    height: 40px;
+    width: 127px;
 }
 
 .footer {
