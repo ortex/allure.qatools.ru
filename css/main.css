@@ -1,7 +1,6 @@
 body {
     background-color: #FFF;
     font: 14px normal 'Open Sans', sans-serif;
-    line-height: 1.5em;
 }
 
 a {
@@ -14,10 +13,6 @@ a:hover {
 
 .content {
     text-align: justify;
-}
-
-.header, .content {
-    /*clear: both;*/
 }
 
 .header a {
@@ -168,7 +163,7 @@ a:hover {
 }
 
 .slide__description_right {
-    right: 5px;
+    right: 9px;
     left: auto;
 }
 
@@ -181,6 +176,37 @@ a:hover {
 
 .informers {
     margin-top: 10em;
+}
+
+.informers__line {
+    margin-bottom: 10px;
+}
+
+.informers__line iframe {
+    display: block;
+    height: 30px;
+    width: 100%;
+}
+
+.teamcity__label {
+    background-color: rgb(230, 230, 230);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(rgb(250, 250, 250)),to(rgb(234, 234, 234)));
+    background-image: -webkit-linear-gradient(rgb(250, 250, 250),rgb(234, 234, 234));
+    background-image: -moz-linear-gradient(top,#fafafa,#eaeaea);
+    background-image: -ms-linear-gradient(#fafafa,#eaeaea);
+    background-image: -o-linear-gradient(#fafafa,#eaeaea);
+    background-image: linear-gradient(rgb(250, 250, 250),rgb(234, 234, 234));
+    background-repeat: no-repeat;
+    border: 1px solid rgb(212, 212, 212);
+    border-bottom-color: rgb(188, 188, 188);
+    font-weight: bold;
+}
+.teamcity__label, .teamcity__count {
+    padding: 4px 9px;
+}
+
+.text, .page {
+    line-height: 1.5em;
 }
 
 .page pre {
