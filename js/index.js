@@ -13,7 +13,7 @@ $(document).ready(function() {
         })[0];
     };
     TeamcityBuld.prototype.onLoadStatus = function(response) {
-        var job = this.findJob(response.jobs, 'Allure Framework :: Allure Core', 'development_deploy'),
+        var job = this.findJob(response.jobs, 'Allure Framework :: Allure Core', 'master_deploy'),
             status = job.color === 'blue' ? 'PASSED' : 'FAILED',
             countBlock = this.$el.find('.teamcity__count');
         countBlock.html(status);
