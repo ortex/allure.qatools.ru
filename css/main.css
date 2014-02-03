@@ -16,7 +16,6 @@ a:hover {
 }
 
 .header a {
-    font-weight: normal;
     text-decoration: none;
 }
 
@@ -25,7 +24,8 @@ a:hover {
 }
 
 .title {
-    font-family: 'Oleo Script', cursive;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: bold;
     line-height: 1.5em;
 }
 
@@ -170,8 +170,8 @@ a:hover {
 .slide__title {
     margin-top: 0;
     color: #a00;
-    font-weight: normal;
-    font-family: 'Oleo Script', cursive;
+    font-weight: bold;
+    font-family: 'Exo 2', sans-serif;
 }
 
 .informers {

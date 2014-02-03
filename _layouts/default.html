@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+{% include get_lang.md %}
 <html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <link href='http://fonts.googleapis.com/css?family=Oleo+Script|Open+Sans:400italic,400&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Exo+2:700|Open+Sans:400italic,400&subset=latin,cyrillic" rel="stylesheet" type="text/css">
     <title>{{ page.title }}</title>
     <meta name="viewport" content="width=device-width">
 
@@ -19,20 +20,28 @@
 
 <header class="header">
     <div class="container">
-        <h1 class="title"><a href="/">{{ site.name }}</a></h1>
+        <h1 class="title"><a href="/{{lang_prefix}}">{{ site.name }}</a></h1>
         <ul class="menu">
-            <li><a class="menu__title" href="{{site.baseurl}}/">Home</a></li>
-            {% directory path:'langs' %}
+            <li><a class="menu__title" href="{{site.baseurl}}/{{lang_prefix}}">{{site.localization|map:lang|map:'home'}}</a></li>
+            {% assign folder=lang_prefix|append:'langs' %}
+            {% directory path:folder %}
             <li class="menu__menu {{file.name}}">
-                {% assign folder = 'langs/'|append:file.name %}
+                {% assign lang_folder = folder|append:'/'|append:file.name %}
                 <span class="menu__title">{{file.name}}</span>
                 <ul class="dropdown">
-                {% directory path:folder %}
-                    <li class="dropdown__item"><a href="{{site.baseurl}}/{{folder}}/{{file.slug}}.html">{{ file.slug }}</a></li>
+                {% directory path:lang_folder %}
+                    <li class="dropdown__item"><a href="{{site.baseurl}}/{{lang_folder}}/{{file.slug}}.html">{{ file.slug }}</a></li>
                 {% enddirectory %}
                 </ul>
             </li>
             {% enddirectory %}
+            <li>
+                {% if lang == 'ru' %}
+                    <a class="menu__title" href="/">English Version</a>
+                {% else %}
+                    <a class="menu__title" href="/ru/">По-русски</a>
+                {% endif %}
+            </li>
         </ul>
         <div class="pull-right">
             <a class="qatools" href="http://qatools.ru"></a>

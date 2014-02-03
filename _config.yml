@@ -2,3 +2,31 @@ name: Allure Framework
 markdown: redcarpet
 encoding: UTF-8
 baseurl:
+
+localization:
+  en:
+    slides:
+      - title: The most complete reports
+        text: All information about tests before your eyes
+      - title: Easy to use
+        text: Just include our adapter and get a nice report about your tests
+      - title: Detailed explanation
+        text: We can provide maximum amount of information during the test
+      - title: Report as much as you wish
+        text: Save screenshots, dumps, logs and other data as attachment for test
+      - title: Analyze results
+        text: We provide many statistics and build charts with test results distribution and timings of test run
+    home: 'Home'
+  ru:
+    slides:
+      - title: Самые подробные отчеты
+        text: Вся информация о тестах перед вами
+      - title: Легко использовать
+        text: Добавьте наш адаптер к тестам и получите красивый отчет о них
+      - title: Подробное объяснение
+        text: Мы даем как можно больше информации о ходе теста
+      - title: Сообщайте столько, сколько сможете
+        text: Сохраняйте скришноты, дампы, логи и другую информацию как приложение к тесту
+      - title: Анализируйте результаты
+        text: В отчете сохраняется много полезной статистики и есть диаграммы с распределением тестовых результатов и временем выполнения тестов
+    home: 'Главная'
