@@ -2,46 +2,22 @@
 layout: default
 title: Allure self-documented tests
 ---
+{% include get_lang.md %}
 <div class="presentation">
     <div class="container">
         <div class="row">
             <div class="col-md-9">
                 <div class="fotorama slides" data-ratio="800/600" data-width="100%" data-autoplay="true">
-                    <div class="slide">
-                        <img class="slide__image" src="{{site.baseurl}}/img/slides/slide1.png">
-                        <div class="slide__description">
-                            <h2 class="slide__title">The most complete reports</h2>
-                            <div class="slide__text">All information about tests before your eyes</div>
+                    {% assign slides = site.localization|map:lang|map:'slides'|first %}
+                    {% for slide in slides %}
+                        <div class="slide">
+                            <img class="slide__image" src="{{site.baseurl}}/img/slides/slide{{forloop.index}}.png">
+                            <div class="slide__description">
+                                <h2 class="slide__title">{{slide.title}}</h2>
+                                <div class="slide__text">{{slide.text}}</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="slide">
-                        <img class="slide__image" src="{{site.baseurl}}/img/slides/slide2.png">
-                        <div class="slide__description slide__description_right">
-                            <h2 class="slide__title">Easy to use</h2>
-                            <div class="slide__text">Just include our adapter and get a nice report about your tests</div>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <img class="slide__image" src="{{site.baseurl}}/img/slides/slide3.png">
-                        <div class="slide__description slide__description_right">
-                            <h2 class="slide__title">Detailed explanation</h2>
-                            <div class="slide__text">We can provide maximum amount of information during the test</div>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <img class="slide__image" src="{{site.baseurl}}/img/slides/slide4.png">
-                        <div class="slide__description">
-                            <h2 class="slide__title">Report as much as you wish</h2>
-                            <div class="slide__text">Save screenshots, dumps, logs and other data as attachment for test</div>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <img class="slide__image" src="{{site.baseurl}}/img/slides/slide5.png">
-                        <div class="slide__description">
-                            <h2 class="slide__title">Analyze results</h2>
-                            <div class="slide__text">We provide many statistics and build charts with test results distribution and timings of test run</div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
             <div class="col-md-3 informers">
