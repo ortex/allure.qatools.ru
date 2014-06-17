@@ -1,4 +1,10 @@
 ---
 layout: index
 ---
-## Allure по-русски
+## Результаты тестов, понятные для всех
+Правда ведь здорово, когда результаты автоматических тестов понятны всем в команде? Существует множество фреймворков, которые упрощают и ускоряют разработку тестов. Однако практически ни в одном из них не уделено должного внимания представлению результатов. Наша команда работает над фреймворком Allure - open-source инструментом, созданным для генерации простых и понятных отчётов.
+
+## Как мы это делаем?
+Благодаря своей модульной архитектуре, Allure с лёгкостью интегрируется с большинством существующих инструментов тестирования. Allure основывается на стандартном представлении результатов тестов xUnit, дополняя его необходимыми данными. Этим занимаются allure-адаптеры, реализованные для популярных тестовых фреймворков - [junit/testng](https://github.com/allure-framework/allure-core), [karma](https://github.com/allure-framework/karma-allure-reporter), [phpunit](https://github.com/allure-framework/allure-phpunit), [codeception](https://github.com/allure-framework/allure-codeception), [pytest](https://github.com/allure-framework/allure-python), [scalatest](https://github.com/allure-framework/allure-scalatest), [rspec](https://github.com/allure-framework/allure-rspec). 
+
+На втором этапе, полученный xml-файл преобразуется в динамический отчёт. Это преобразование также может быть сделано различными способами - при помощи [cli-интерфейса](https://github.com/allure-framework/allure-cli-zip), [maven-плагина](https://github.com/allure-framework/allure-maven-plugin) или плагина для [jenkins](https://github.com/allure-framework/allure-jenkins-plugin) или [teamcity](https://github.com/allure-framework/allure-teamcity-plugin). В полученном отчёте можно посмотреть на результаты выполнения тестов с различных перспектив - успешные/упавшие/поломанные/пропущенные тесты, время выполения каждого теста в контексте выполнения всего сьюта, разбивку по фичам, user stories и т.д.
