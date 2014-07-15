@@ -80,4 +80,4 @@ public String saveLog(Logger logger) {
 }
 ```
 
-Смотрите [здесь][steps-and-attachments] подробнее о шагах и вложениях.
+Для более подробной информации смотрите статьи в нашем Wiki о [шагах](https://github.com/allure-framework/allure-core/wiki/Steps) и [вложениях](https://github.com/allure-framework/allure-core/wiki/Attachments).
