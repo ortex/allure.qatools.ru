@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en" ng-app="allure">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <title>Allure | Test report and framework for writing self-documented tests</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body class="b-page">
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+    $.getJSON('https://api.github.com/repos/allure-framework/allure-core/releases').success(function(response) {
+        function extractVersion(tag) {
+            return (tag.match(/^allure-core-(.*)$/) || [])[1];
+        }
+        var baseUrl = 'https://github.com/allure-framework/allure-core/releases/tag/';
+        var stable = response.filter(function(release) {
+            return !release.prerelease
+        }).shift();
+        var latest = response[0];
+        $('.release-latest .release-link')
+                .attr('href', baseUrl + latest.tag_name)
+                .text(extractVersion(latest.tag_name));
+        if (latest !== stable) {
+            $('.release-stable')
+                    .removeClass('hidden')
+                    .find('.release-link')
+                    .attr('href', baseUrl + stable.tag_name)
+                    .text(extractVersion(stable.tag_name));
+        }
+    });
+</script>
+<header class="b-page__nav navbar navbar-static-top" role="navigation" ng-controller="NavbarCtrl">
+    <div class="nav navbar-header">
+        <a class="navbar-brand allure-logo" href="#">Allure</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right likes">
+        <li class="likes-github">
+            <iframe src="http://ghbtns.com/github-btn.html?user=allure-framework&repo=allure-core&type=watch&count=true&size=large"
+                    allowtransparency="true" frameborder="0" scrolling="0"></iframe>
+        </li>
+        <li class="likes-tweet">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-hashtags="allure">Tweet</a>
+        </li>
+    </ul>
+    <div class="nav navbar-text navbar-right release release-latest">
+        Latest release: 
+        <a href="https://github.com/allure-framework/allure-core/releases" class="release-link">Loading...</a>
+    </div>
+    <div class="nav navbar-text navbar-right release-stable release hidden">
+        Stable release:
+        <a href="https://github.com/allure-framework/allure-core/releases" class="release-link">Loading...</a>
+    </div>
+</header>
+<div class="dashboard">
+    <ul class="b-vert list-unstyled">
+        <li class="b-vert__item b-vert__item_state_selected">
+            <div class="b-vert__title">
+                <div class="b-vert__icon octicon octicon-home"></div>
+                Overview
+            </div>
+        </li>
+        <li class="b-vert__item">
+            <a class="b-vert__title" href="http://teamcity.qatools.ru/repository/download/allure_core_master_release/lastSuccessful/index.html?guest=1">
+                <div class="b-vert__icon octicon octicon-file-code"></div>
+                Demo Report
+            </a>
+        </li>
+        <li class="b-vert__item">
+            <a class="b-vert__title" href="https://github.com/allure-framework/allure-core/wiki">
+                <div class="b-vert__icon octicon octicon-repo"></div>
+                Documentation
+            </a>
+        </li>
+        <li class="b-vert__item">
+            <a href="https://github.com/allure-examples" class="b-vert__title">
+                <div class="b-vert__icon octicon octicon-mortar-board"></div>
+                Examples
+            </a>
+        </li>
+        <li class="b-vert__item">
+            <a class="b-vert__title" href="https://github.com/allure-framework/allure-core">
+                <div class="b-vert__icon octicon octicon-mark-github"></div>
+                Source Code
+            </a>
+        </li>
+        <li class="b-vert__item">
+            <a class="b-vert__title" href="https://github.com/allure-framework/allure-core/releases">
+                <div class="b-vert__icon octicon octicon-tag"></div>
+                Release Notes
+            </a>
+        </li>
+    </ul>
+    <section class="tab-content">
+        <div class="b-island tab-content-fill">
+            <div class="text container">
+                <div class="page-header">
+                    <h1 class="allure-title text-center">Allure Test Report</h1>
+                    <p class="allure-description text-justify">
+                        There are lots of cool testing frameworks for different programming languages. Unfortunately only
+                        few of them can provide good representation of test execution output.
+                        <a href="http://company.yandex.com/">Yandex team</a> is working on
+                        <a href="https://github.com/allure-framework/allure-core">Allure</a> - an open-source
+                        framework designed to create test execution reports clear to everyone in the team.
+                    </p>
+                </div>
+
+                <h2>How it works</h2>
+
+                <p>Allure is based on standart xUnit results output but adds some supplementary data. Any report is
+                    generated in two steps. During <strong>test execution</strong> (first step) a small library called
+                    <strong>adapter</strong>
+                    attached to testing framework saves information about executed tests to XML files. We already
+                    provide adapters for popular Java, PHP, Ruby, Python, Scala and C# test frameworks.
+                </p>
+
+                <p>
+                    During <strong>report generation</strong> (second step) XML files are transformed to HTML report.
+                    This can be done with command line tool, plugin for CI or build tool. See <a href="https://github.com/allure-examples">examples</a> and <a href="https://github.com/allure-framework/allure-core/wiki">documentation</a> for more details.
+                </p>
+
+                <h2>How it looks like</h2>
+                <p><strong>Overview</strong> page shows overall test execution statistics with a list of test parameters. Right section contains top defects grouped by defect message.</p>
+                <img src="img/overview.png" alt="Overview Page" class="img-thumbnail" />
+                <p><strong>Defects</strong> page gives detailed list of defects revealed during test execution. We distinguish product defects which correspond to failed tests and test defects - correspond to broken tests.</p>
+                <img src="img/defects.png" alt="Defects Page" class="img-thumbnail" />
+                <p><strong>xUnit</strong> page shows statistics in terms of <a href="http://en.wikipedia.org/wiki/XUnit">xUnit</a>. You can view test statistics for each test suite and detailed information about every test case.</p>
+                <img src="img/xunit.png" alt="xUnit Page" class="img-thumbnail" />
+                <p><strong>Behaviors</strong> page groups test data in terms of <a href="http://en.wikipedia.org/wiki/Behavior-driven_development">BDD</a>. You can easily view which features and stories have problems.</p>
+                <img src="img/bdd.png" alt="Behaviors Page" class="img-thumbnail" />
+                <p><strong>Graphs</strong> help you to visually estimate test results.</p>
+                <img src="img/graph.png" alt="Graph Page" class="img-thumbnail" />
+                <p><strong>Timeline</strong> page shows in which moment of time every test case was executed and how long it was running.</p>
+                <img src="img/timeline.png" alt="Timeline Page" class="img-thumbnail" />
+                
+                <hr/>
+                
+                <p><small>&copy; 2013-2014 Allure Team. This project is supported by <a href="http://company.yandex.com/">Yandex</a>.</small></p>
+
+            </div>
+        </div>
+    </section>
+    <script>
+        !function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = p + '://platform.twitter.com/widgets.js';
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, 'script', 'twitter-wjs');
+    </script>
+</div>
+</body>
+</html>
