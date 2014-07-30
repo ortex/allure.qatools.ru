@@ -7637,6 +7637,13 @@ svg .link.link-current {
 .attachment img {
   max-width: 100%;
 }
+.b-page__nav {
+  min-width: 850px;
+}
+.b-page__nav .navbar-header {
+  width: 138px;
+  float: left;
+}
 .b-page__nav .navbar-header .allure-logo {
   background: url(../img/allure-logo.png) 10px center no-repeat;
   font-size: 1.4em;
@@ -7646,6 +7653,19 @@ svg .link.link-current {
 .b-page__nav .navbar-header .allure-logo,
 .b-page__nav .navbar-header .allure-logo:hover {
   color: #333333;
+}
+.b-page__nav .navbar-text {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.b-page__nav .navbar-right {
+  float: right;
+}
+.b-page__nav .navbar-nav {
+  margin: 0;
+}
+.b-page__nav .navbar-nav li {
+  float: left;
 }
 .likes li {
   margin: 10px 15px;
@@ -7704,6 +7724,10 @@ svg .link.link-current {
   left: 1px;
   bottom: 20px;
   right: 20px;
+}
+.dashboard > .tab-content > .tab-content-fill > .text {
+  max-width: 1170px;
+  padding: 0 30px;
 }
 .dashboard > .tab-content .tab-blank {
   left: 1px;
