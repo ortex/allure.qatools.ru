@@ -7728,6 +7728,7 @@ svg .link.link-current {
 .dashboard > .tab-content > .tab-content-fill > .text {
   max-width: 1170px;
   padding: 0 30px;
+  margin: 0 auto;
 }
 .dashboard > .tab-content .tab-blank {
   left: 1px;
