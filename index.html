@@ -14,11 +14,11 @@
 <!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter25818038 = new Ya.Metrika({id:25818038, webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/25818038" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script type="text/javascript">
-    $.getJSON('https://api.github.com/repos/allure-framework/allure-core/releases').success(function(response) {
+    $.getJSON('https://api.github.com/repos/allure-framework/allure1/releases').success(function(response) {
         function extractVersion(tag) {
             return (tag.match(/^allure-core-(.*)$/) || [])[1];
         }
-        var baseUrl = 'https://github.com/allure-framework/allure-core/releases/tag/';
+        var baseUrl = 'https://github.com/allure-framework/allure1/releases/tag/';
         var stable = response.filter(function(release) {
             return !release.prerelease
         }).shift();
@@ -41,7 +41,7 @@
     </div>
     <ul class="nav navbar-nav navbar-right likes">
         <li class="likes-github">
-            <iframe src="http://ghbtns.com/github-btn.html?user=allure-framework&repo=allure-core&type=watch&count=true&size=large"
+            <iframe src="http://ghbtns.com/github-btn.html?user=allure-framework&repo=allure1&type=watch&count=true&size=large"
                     allowtransparency="true" frameborder="0" scrolling="0"></iframe>
         </li>
         <li class="likes-tweet">
@@ -50,11 +50,11 @@
     </ul>
     <div class="nav navbar-text navbar-right release release-latest">
         Latest release: 
-        <a href="https://github.com/allure-framework/allure-core/releases" class="release-link">Loading...</a>
+        <a href="https://github.com/allure-framework/allure1/releases" class="release-link">Loading...</a>
     </div>
     <div class="nav navbar-text navbar-right release-stable release hidden">
         Stable release:
-        <a href="https://github.com/allure-framework/allure-core/releases" class="release-link">Loading...</a>
+        <a href="https://github.com/allure-framework/allure1/releases" class="release-link">Loading...</a>
     </div>
 </header>
 <div class="dashboard">
@@ -66,13 +66,13 @@
             </div>
         </li>
         <li class="b-vert__item">
-            <a class="b-vert__title" href="http://ci.qatools.ru/job/allure1_master-deploy/lastSuccessfulBuild/Allure_report/">
+            <a class="b-vert__title" href="https://ci.qameta.io/job/allure1/job/master/Allure_Report/index.html">
                 <div class="b-vert__icon octicon octicon-file-code"></div>
                 Demo Report
             </a>
         </li>
         <li class="b-vert__item">
-            <a class="b-vert__title" href="https://github.com/allure-framework/allure-core/wiki">
+            <a class="b-vert__title" href="https://github.com/allure-framework/allure1/wiki">
                 <div class="b-vert__icon octicon octicon-repo"></div>
                 Documentation
             </a>
@@ -90,13 +90,13 @@
             </a>
         </li>
         <li class="b-vert__item">
-            <a class="b-vert__title" href="https://github.com/allure-framework/allure-core">
+            <a class="b-vert__title" href="https://github.com/allure-framework/allure1">
                 <div class="b-vert__icon octicon octicon-mark-github"></div>
                 Source Code
             </a>
         </li>
         <li class="b-vert__item">
-            <a class="b-vert__title" href="https://github.com/allure-framework/allure-core/releases">
+            <a class="b-vert__title" href="https://github.com/allure-framework/allure1/releases">
                 <div class="b-vert__icon octicon octicon-tag"></div>
                 Release Notes
             </a>
@@ -111,7 +111,7 @@
                         There are lots of cool testing frameworks for different programming languages. Unfortunately only
                         a few of them can provide good representation of test execution output.
                         The <a href="http://company.yandex.com/">Yandex</a> testing team is working on
-                        <a href="https://github.com/allure-framework/allure-core">Allure</a> - an open-source
+                        <a href="https://github.com/allure-framework/allure1">Allure</a> - an open-source
                         framework designed to create test execution reports that are clear to everyone in the team.
                     </p>
                 </div>
