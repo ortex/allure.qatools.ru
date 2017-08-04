@@ -14,11 +14,11 @@
 <!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter25818038 = new Ya.Metrika({id:25818038, webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/25818038" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script type="text/javascript">
-    $.getJSON('https://api.github.com/repos/allure-framework/allure1/releases').success(function(response) {
+    $.getJSON('https://api.github.com/repos/allure-framework/allure2/releases').success(function(response) {
         function extractVersion(tag) {
             return (tag.match(/^allure-core-(.*)$/) || [])[1];
         }
-        var baseUrl = 'https://github.com/allure-framework/allure1/releases/tag/';
+        var baseUrl = 'https://github.com/allure-framework/allure2/releases/tag/';
         var stable = response.filter(function(release) {
             return !release.prerelease
         }).shift();
